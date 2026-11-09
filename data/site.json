@@ -1,0 +1,32 @@
+{
+  "name": "القهوة مزاج",
+  "tagline": "كل كوباية، مزاج جديد",
+  "shortDescription": "كافيه قهوة مختصة في القاهرة: حبوب مختارة، تحميص طازة، ومكان دافي يستاهل القعدة.",
+  "whatsappNumber": "201000000000",
+  "whatsappDisplay": "[01XXXXXXXXX]",
+  "whatsappMessage": "أهلاً «القهوة مزاج» 👋 عندي سؤال عن المنيو/الحجز.",
+  "instagramHandle": "@alqahwamizag",
+  "instagramUrl": "https://instagram.com/alqahwamizag",
+  "facebookUrl": "https://facebook.com/alqahwamizag",
+  "address": "[العنوان هنا] — المعادي، القاهرة",
+  "addressNote": "استبدل النص بعنوان الفرع التفصيلي قبل النشر.",
+  "mapQuery": "المعادي، القاهرة",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A%D8%8C+%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9",
+  "geo": {
+    "latitude": 29.9602,
+    "longitude": 31.2569
+  },
+  "priceRange": "٤٥–٩٥ ج.م",
+  "hours": [
+    {
+      "days": "السبت – الخميس",
+      "time": "١٠:٠٠ ص – ١٢:٠٠ م"
+    },
+    {
+      "days": "الجمعة",
+      "time": "١٢:٠٠ م – ١:٠٠ ص"
+    }
+  ],
+  "hoursNote": "المطبخ بيقفل قبل المواعيد بساعة.",
+  "copyrightYear": 2026
+}

@@ -1,0 +1,102 @@
+{
+  "categories": [
+    { "id": "hot", "label": "ساخن" },
+    { "id": "cold", "label": "بارد" },
+    { "id": "sweet", "label": "حلويات" }
+  ],
+  "items": [
+    {
+      "id": "espresso",
+      "name": "إسبريسو مفرد",
+      "category": "hot",
+      "price": 45,
+      "description": "جرعة مركزة من حبوبنا المحمصة، كراميل خفيف ونهاية شوكولاتة.",
+      "tag": "الأساس"
+    },
+    {
+      "id": "turkish",
+      "name": "قهوة تركي",
+      "category": "hot",
+      "price": 50,
+      "description": "على الرملة، بمزاج تقيل شوية ووش كريمي بيقعد معاك.",
+      "tag": "كلاسيك"
+    },
+    {
+      "id": "flat-white",
+      "name": "فلات وايت",
+      "category": "hot",
+      "price": 65,
+      "description": "إسبريسو مع حليب مخملي، حليب أقل عشان القهوة تبان.",
+      "tag": "الأكثر طلبًا"
+    },
+    {
+      "id": "cappuccino",
+      "name": "كابتشينو",
+      "category": "hot",
+      "price": 60,
+      "description": "رغوة كتيفة، شوكولاتة على الوش، ومزاج بيبدأ من أول رشفة."
+    },
+    {
+      "id": "v60",
+      "name": "قهوة سوداء V60",
+      "category": "hot",
+      "price": 75,
+      "description": "تحضير يدوي على مهل، حموضة فاكهية ونوتة ياسمين.",
+      "tag": "مختصة"
+    },
+    {
+      "id": "iced-latte",
+      "name": "آيس لاتيه",
+      "category": "cold",
+      "price": 70,
+      "description": "إسبريسو على حليب بارد وتلج، للي بيحب قهوته من غير استعجال.",
+      "tag": "صيفي"
+    },
+    {
+      "id": "spanish-latte",
+      "name": "آيس سبانيش لاتيه",
+      "category": "cold",
+      "price": 85,
+      "description": "حليب مكثف محلى وقهوة قوية، حلو من غير ما يبقى تقيل.",
+      "tag": "الأكثر طلبًا"
+    },
+    {
+      "id": "cold-brew",
+      "name": "كولد برو",
+      "category": "cold",
+      "price": 80,
+      "description": "منقوع ١٨ ساعة، ناعم وحلو طبيعي ومن غير سكر.",
+      "tag": "١٨ ساعة"
+    },
+    {
+      "id": "iced-mocha",
+      "name": "موكا مثلجة",
+      "category": "cold",
+      "price": 90,
+      "description": "قهوة وشوكولاتة وثلج مخفوق، للي مزاجه حلو النهارده."
+    },
+    {
+      "id": "pistachio-cake",
+      "name": "تشيز كيك بستاشيو",
+      "category": "sweet",
+      "price": 95,
+      "description": "قطعة كريمية على قاعدة بيسكوت محمص، بستاشيو حقيقي.",
+      "tag": "بيخلص بدري"
+    },
+    {
+      "id": "almond-croissant",
+      "name": "كرواسون لوز",
+      "category": "sweet",
+      "price": 70,
+      "description": "طبقات مقرمشة من برة وطرية من جوه، وحشوة لوز."
+    },
+    {
+      "id": "chocolate-cookie",
+      "name": "كوكيز شوكولاتة",
+      "category": "sweet",
+      "price": 55,
+      "description": "طازة من الفرن كل يوم الساعة ٤، قطع شوكولاتة سايحة.",
+      "tag": "٤ العصر"
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — "القهوة مزاج"
+   Deep espresso, warm cream, muted gold, olive. Arch motif throughout.
+--------------------------------------------------------------------------- */
+:root {
+  --c-bg: #f5ebdd;
+  --c-bg-soft: #efe1ce;
+  --c-surface: #fcf7ef;
+  --c-ink: #3b2416;
+  --c-ink-soft: #553d2b;
+  --c-muted: #6f5a49;
+  --c-gold: #d4a373;
+  --c-gold-strong: #8a5528;
+  --c-olive: #5c6a33;
+  --c-line: #ddc8ad;
+  --c-line-strong: #c6a985;
+  --c-espresso: #3b2416;
+  --c-espresso-deep: #2a180e;
+  --c-on-espresso: #f5ebdd;
+  --c-grain-opacity: 0.055;
+  --shadow-soft: 0 18px 40px -28px rgb(59 36 22 / 0.45);
+  --shadow-lift: 0 26px 55px -30px rgb(59 36 22 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #241610;
+    --c-bg-soft: #2b1a12;
+    --c-surface: #332016;
+    --c-ink: #f3e7d7;
+    --c-ink-soft: #e5d4c0;
+    --c-muted: #c3ac94;
+    --c-gold: #d9ab7d;
+    --c-gold-strong: #e8c39c;
+    --c-olive: #a9b97c;
+    --c-line: #4a3425;
+    --c-line-strong: #6b4c36;
+    --c-espresso: #1c110b;
+    --c-espresso-deep: #150c07;
+    --c-on-espresso: #f5ebdd;
+    --c-grain-opacity: 0.075;
+    --shadow-soft: 0 18px 40px -26px rgb(0 0 0 / 0.7);
+    --shadow-lift: 0 26px 55px -28px rgb(0 0 0 / 0.75);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-bg-soft: var(--c-bg-soft);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-muted: var(--c-muted);
+  --color-gold: var(--c-gold);
+  --color-gold-strong: var(--c-gold-strong);
+  --color-olive: var(--c-olive);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-espresso: var(--c-espresso);
+  --color-espresso-deep: var(--c-espresso-deep);
+  --color-on-espresso: var(--c-on-espresso);
+
+  --font-display: var(--font-cairo), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-tajawal), "Segoe UI", system-ui, sans-serif;
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+}
+
+@layer base {
+  * {
+    border-color: var(--c-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.9;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.3;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--c-gold);
+    color: #3b2416;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--c-gold-strong);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :focus-visible {
+      outline-color: var(--c-gold);
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Arched frame — the recurring motif of the brand. */
+  .arch {
+    border-start-start-radius: 999px;
+    border-start-end-radius: 999px;
+  }
+
+  .arch-frame {
+    border-start-start-radius: 999px;
+    border-start-end-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--c-line);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--c-muted);
+  }
+
+  .eyebrow::before {
+    content: "";
+    inline-size: 1.5rem;
+    block-size: 1px;
+    background: var(--c-gold-strong);
+    flex: none;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      transform 220ms ease,
+      background-color 220ms ease,
+      color 220ms ease,
+      border-color 220ms ease,
+      box-shadow 220ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-primary {
+    background: var(--c-gold);
+    color: #3b2416;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary:hover {
+    background: #e0b58a;
+    box-shadow: 0 10px 24px -14px rgb(59 36 22 / 0.65);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--c-on-espresso);
+    border: 1px solid rgb(245 235 221 / 0.35);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgb(245 235 221 / 0.8);
+    background: rgb(245 235 221 / 0.08);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--c-ink);
+    border: 1px solid var(--c-line-strong);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--c-ink);
+    background: var(--c-bg-soft);
+  }
+
+  .card-soft {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--c-grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: multiply;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .grain::after {
+      mix-blend-mode: screen;
+    }
+  }
+
+  .grain > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .rule {
+    block-size: 1px;
+    background: var(--c-line);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Splash screen — plain CSS so it works before hydration, and stays hidden
+   when JS is unavailable (html[data-splash] is only set by the inline script).
+--------------------------------------------------------------------------- */
+.splash {
+  display: none;
+}
+
+html[data-splash="1"] {
+  overflow: hidden;
+}
+
+html[data-splash="1"] .splash {
+  display: grid;
+  animation: splash-away 620ms cubic-bezier(0.4, 0, 0.2, 1) 2.35s forwards;
+}
+
+.splash--out {
+  animation: splash-away 380ms cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+.splash__bar-fill {
+  inline-size: 0%;
+  animation: bar-fill 2.15s cubic-bezier(0.45, 0, 0.25, 1) 120ms forwards;
+}
+
+.splash__enter {
+  opacity: 0;
+  animation: enter-in 420ms ease 2s forwards;
+}
+
+@keyframes bar-fill {
+  from {
+    inline-size: 0%;
+  }
+  to {
+    inline-size: 100%;
+  }
+}
+
+@keyframes enter-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes splash-away {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.035);
+    visibility: hidden;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menu-enter {
+  animation: menu-in 420ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.lightbox-enter {
+  animation: lightbox-in 260ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Steam rising from the cup */
+.steam path {
+  animation: steam-rise 4.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.steam path:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.steam path:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scaleY(0.92);
+  }
+  22% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.22;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scaleY(1.08);
+  }
+}
+
+/* Scroll reveal — only when JS is present, so content never hides for crawlers. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+
+html.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .steam path,
+  .splash,
+  .splash__bar-fill,
+  .splash__enter {
+    animation: none !important;
+  }
+
+  .steam path {
+    opacity: 0.4;
+  }
+
+  .splash__bar-fill {
+    inline-size: 100%;
+  }
+
+  .splash__enter {
+    opacity: 1;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .splash,
+  header,
+  .no-print {
+    display: none !important;
+  }
+}
